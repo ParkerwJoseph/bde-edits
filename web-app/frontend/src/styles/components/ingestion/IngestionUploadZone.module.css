@@ -1,0 +1,108 @@
+/* IngestionUploadZone Component Styles */
+/* Based on reference UI design */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  background-color: var(--bg-card);
+  border: 1px dashed var(--border-default);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.container:hover {
+  border-color: var(--color-primary);
+  background-color: rgba(var(--primary-rgb, 59, 130, 246), 0.02);
+}
+
+.dragging {
+  border-color: var(--color-primary);
+  background-color: rgba(var(--primary-rgb, 59, 130, 246), 0.05);
+  border-style: solid;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(var(--primary-rgb, 59, 130, 246), 0.1);
+  margin-bottom: 16px;
+}
+
+.icon {
+  color: var(--color-primary);
+}
+
+.title {
+  font-family: var(--font-sans);
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-foreground);
+}
+
+.description {
+  margin: 0;
+  max-width: 400px;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+/* Browse Buttons */
+.browseButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.browseButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md, 6px);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.browseButton:hover:not(:disabled) {
+  background-color: var(--color-primary-hover, #2563eb);
+  transform: translateY(-1px);
+}
+
+.browseButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.browseButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

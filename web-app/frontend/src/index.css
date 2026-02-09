@@ -1,0 +1,575 @@
+/* IBM Plex Sans - Primary typeface */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+/* IBM Plex Serif - Secondary typeface for emphasis */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&display=swap');
+/* JetBrains Mono for monospace/code elements */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode - BDE Analytics Color Palette (Deal-Grade, Calm, Authoritative) */
+    --background: 220 13% 96%; /* #F4F5F7 Warm Off-White */
+    --foreground: 212 15% 14%; /* #1F2328 Deep Charcoal */
+    --card: 0 0% 100%; /* #FFFFFF Card/Panel Background */
+    --card-inner: 220 13% 98%;
+    --card-foreground: 212 15% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 212 15% 14%;
+
+    /* Primary accent - Slate Blue-Gray #3A4A5E */
+    --primary: 214 23% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Slate Blue-Gray #3A4A5E for secondary surfaces */
+    --secondary: 214 23% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 13% 91%;
+    --muted-foreground: 214 23% 40%; /* Slate Blue-Gray tint */
+    --accent: 220 13% 94%; /* Subtle off-white accent */
+    --accent-foreground: 212 15% 14%;
+    --destructive: 5 70% 54%; /* #DE4733 */
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 15% 85%; /* Lighter, more subtle borders */
+    --input: 220 13% 91%;
+    --ring: 214 23% 30%;
+    --radius: 0.5rem;
+
+    /* Sidebar - light/white background */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 212 15% 14%;
+    --sidebar-primary: 212 15% 14%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 13% 96%;
+    --sidebar-accent-foreground: 212 15% 14%;
+    --sidebar-border: 214 15% 88%;
+    --sidebar-ring: 214 23% 30%;
+
+    /* KPI Status Banding (Green - Red 5 Color) */
+    --kpi-strong: 72 28% 50%; /* #97A35C */
+    --kpi-healthy: 50 35% 55%; /* #B6A762 */
+    --kpi-watch: 214 15% 65%; /* Slate-tinted neutral */
+    --kpi-at-risk: 29 62% 49%; /* #CB7D31 */
+    --kpi-high-risk: 5 70% 54%; /* #DE4733 */
+
+    /* Accent & Threshold */
+    --score-green: 120 20% 50%; /* #669966 Healthy Green */
+    --score-yellow: 50 35% 55%; /* #B6A762 */
+    --score-red: 0 60% 50%; /* #CC3333 High Risk Red */
+
+    /* Standard Chart Colors - Muted Teal #4E7A7C for data viz */
+    --chart-default: 214 20% 45%; /* Slate Blue-Gray */
+    --chart-secondary: 214 15% 60%; /* Lighter slate */
+    --chart-highlight: 174 24% 40%; /* Muted Teal #4E7A7C */
+    --chart-muted: 214 15% 70%; /* De-emphasized */
+    --chart-1: 174 24% 40%; /* Muted Teal (primary chart color) */
+    --chart-2: 214 23% 30%; /* Slate Blue-Gray */
+    --chart-3: 214 20% 45%; /* Slate */
+    --chart-4: 214 15% 55%; /* Light Slate */
+    --chart-5: 72 28% 50%; /* KPI Strong */
+
+    --ring-track: 214 15% 88%;
+    --ring-glow: 214 23% 30%;
+    --glass-bg: 214 20% 10% / 0.02;
+    --glass-border: 214 20% 10% / 0.05;
+    --glass-highlight: 0 0% 100% / 0.5;
+    --axis-label: 214 15% 55%; /* Slate axis labels */
+
+    /* Layout CSS Module Aliases - map semantic names to HSL-wrapped theme vars */
+    --sidebar-width: 16rem; /* 256px - matches reference UI */
+    --sidebar-collapsed-width: 3rem; /* 48px - matches reference UI */
+    --sidebar-bg: hsl(var(--sidebar-background));
+    --sidebar-border-color: hsl(var(--sidebar-border));
+    --sidebar-fg: hsl(var(--sidebar-foreground));
+    --sidebar-accent-bg: hsl(var(--sidebar-accent));
+    --sidebar-accent-fg: hsl(var(--sidebar-accent-foreground));
+    --bg-card: hsl(var(--card));
+    --bg-muted: hsl(var(--muted));
+    --bg-default: hsl(var(--background));
+    --bg-background: hsl(var(--background));
+    --border-default: hsl(var(--border));
+    --text-primary: hsl(var(--foreground));
+    --text-secondary: hsl(var(--muted-foreground));
+    --text-muted: hsl(var(--muted-foreground));
+    --text-foreground: hsl(var(--foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-primary-hover: hsl(var(--primary) / 0.9);
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+    /* Border radius */
+    --radius-xs: calc(0.5rem - 4px);
+    --radius-sm: calc(0.5rem - 2px);
+    --radius-md: calc(0.5rem - 2px);
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-full: 9999px;
+
+    /* Font families */
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Additional background colors */
+    --bg-accent: hsl(var(--accent));
+    --bg-hover: hsl(var(--muted));
+    --bg-subtle: hsl(var(--muted) / 0.5);
+    --bg-base: hsl(var(--background));
+    --bg-card-elevated: hsl(var(--card));
+
+    /* Additional border colors */
+    --border-hover: hsl(var(--border));
+    --border-strong: hsl(var(--foreground) / 0.2);
+    --border-subtle: hsl(var(--border) / 0.5);
+
+    /* Score HSL variants (raw HSL for alpha compositing) */
+    --score-green-hsl: 120 20% 50%;
+    --score-yellow-hsl: 50 35% 55%;
+    --score-red-hsl: 0 60% 50%;
+    --score-orange: 29 62% 49%;
+
+    /* Chart color aliases */
+    --chart-1-color: hsl(var(--chart-1));
+    /* Chart HSL variants */
+    --chart-2-hsl: 214 23% 30%;
+    --chart-highlight-hsl: 174 24% 40%;
+
+    /* KPI color aliases (hsl-wrapped for CSS modules) */
+    --kpi-strong-color: hsl(var(--kpi-strong));
+    --kpi-healthy-color: hsl(var(--kpi-healthy));
+    --kpi-watch-color: hsl(var(--kpi-watch));
+    --kpi-at-risk-color: hsl(var(--kpi-at-risk));
+    --kpi-high-risk-color: hsl(var(--kpi-high-risk));
+  }
+
+  .dark {
+    /* Dark Mode - BDE Analytics Color Palette (Deep Charcoal #1F2328) */
+    --background: 212 15% 14%; /* #1F2328 Deep Charcoal/Graphite */
+    --foreground: 210 8% 91%; /* #E6E8EA Primary Text */
+    --card: 212 14% 18%; /* Slightly lighter than background */
+    --card-inner: 212 13% 22%;
+    --card-foreground: 210 8% 91%;
+    --popover: 212 14% 18%;
+    --popover-foreground: 210 8% 91%;
+
+    /* Primary accent - Slate Blue-Gray #3A4A5E */
+    --primary: 214 23% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Slate Blue-Gray #3A4A5E for secondary */
+    --secondary: 214 23% 30%;
+    --secondary-foreground: 210 8% 91%;
+    --muted: 212 14% 24%;
+    --muted-foreground: 214 15% 60%; /* Slate Blue-Gray tint */
+    --accent: 212 14% 22%;
+    --accent-foreground: 210 8% 91%;
+    --destructive: 5 70% 54%; /* #DE4733 */
+    --destructive-foreground: 0 0% 100%;
+    --border: 212 14% 26%; /* Subtle dark borders */
+    --input: 212 14% 24%;
+    --ring: 214 23% 35%;
+
+    --sidebar-background: 212 14% 18%;
+    --sidebar-foreground: 210 8% 91%;
+    --sidebar-primary: 210 8% 91%;
+    --sidebar-primary-foreground: 212 15% 14%;
+    --sidebar-accent: 212 14% 24%;
+    --sidebar-accent-foreground: 210 8% 91%;
+    --sidebar-border: 212 14% 26%;
+    --sidebar-ring: 214 23% 35%;
+
+    /* KPI Status Banding (same colors for consistency) */
+    --kpi-strong: 72 28% 50%; /* #97A35C */
+    --kpi-healthy: 50 35% 55%; /* #B6A762 */
+    --kpi-watch: 214 15% 55%; /* Slate-tinted neutral */
+    --kpi-at-risk: 29 62% 49%; /* #CB7D31 */
+    --kpi-high-risk: 5 70% 54%; /* #DE4733 */
+
+    /* Accent & Threshold */
+    --score-green: 120 20% 50%; /* #669966 */
+    --score-yellow: 50 35% 55%; /* #B6A762 */
+    --score-red: 0 60% 50%; /* #CC3333 */
+
+    /* Standard Chart Colors - Muted Teal for data viz */
+    --chart-default: 214 20% 50%;
+    --chart-secondary: 214 15% 45%;
+    --chart-highlight: 174 24% 40%; /* Muted Teal */
+    --chart-muted: 214 15% 35%;
+    --chart-1: 174 24% 40%; /* Muted Teal */
+    --chart-2: 214 23% 35%; /* Slate Blue-Gray */
+    --chart-3: 214 20% 50%;
+    --chart-4: 214 15% 45%;
+    --chart-5: 72 28% 50%;
+
+    --ring-track: 212 14% 28%;
+    --ring-glow: 214 23% 35%;
+    --glass-bg: 0 0% 100% / 0.02;
+    --glass-border: 0 0% 100% / 0.05;
+    --glass-highlight: 0 0% 100% / 0.03;
+    --axis-label: 214 15% 50%;
+
+    /* Layout CSS Module Aliases - dark mode overrides */
+    --sidebar-bg: hsl(var(--sidebar-background));
+    --sidebar-border-color: hsl(var(--sidebar-border));
+    --sidebar-fg: hsl(var(--sidebar-foreground));
+    --sidebar-accent-bg: hsl(var(--sidebar-accent));
+    --sidebar-accent-fg: hsl(var(--sidebar-accent-foreground));
+    --bg-card: hsl(var(--card));
+    --bg-muted: hsl(var(--muted));
+    --bg-default: hsl(var(--background));
+    --bg-background: hsl(var(--background));
+    --border-default: hsl(var(--border));
+    --text-primary: hsl(var(--foreground));
+    --text-secondary: hsl(var(--muted-foreground));
+    --text-muted: hsl(var(--muted-foreground));
+    --text-foreground: hsl(var(--foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-primary-hover: hsl(var(--primary) / 0.9);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    --bg-accent: hsl(var(--accent));
+    --bg-hover: hsl(var(--muted));
+    --bg-subtle: hsl(var(--muted) / 0.5);
+    --bg-base: hsl(var(--background));
+    --bg-card-elevated: hsl(var(--card));
+    --border-hover: hsl(var(--border));
+    --border-strong: hsl(var(--foreground) / 0.2);
+    --border-subtle: hsl(var(--border) / 0.5);
+    --score-green-hsl: 120 20% 50%;
+    --score-yellow-hsl: 50 35% 55%;
+    --score-red-hsl: 0 60% 50%;
+    --score-orange: 29 62% 49%;
+    --chart-1-color: hsl(var(--chart-1));
+    --chart-2-hsl: 214 23% 35%;
+    --chart-highlight-hsl: 174 24% 40%;
+
+    /* KPI color aliases (hsl-wrapped for CSS modules) */
+    --kpi-strong-color: hsl(var(--kpi-strong));
+    --kpi-healthy-color: hsl(var(--kpi-healthy));
+    --kpi-watch-color: hsl(var(--kpi-watch));
+    --kpi-at-risk-color: hsl(var(--kpi-at-risk));
+    --kpi-high-risk-color: hsl(var(--kpi-high-risk));
+  }
+
+  * { @apply border-border; }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+  }
+
+  /* Typography scale - IBM Plex Sans primary, IBM Plex Serif for emphasis */
+  .t-display {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-3xl md:text-4xl font-semibold;
+    letter-spacing: -0.02em;
+  }
+  .t-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-xl md:text-2xl font-medium;
+    letter-spacing: -0.01em;
+  }
+  .t-score {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    @apply font-normal;
+    letter-spacing: -0.02em;
+  }
+  .t-metric {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    @apply text-2xl font-normal;
+    letter-spacing: -0.02em;
+  }
+  .t-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-sm font-medium;
+    letter-spacing: 0;
+  }
+  .t-subtitle {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-sm font-medium;
+    letter-spacing: 0;
+  }
+  .t-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-sm font-normal leading-relaxed text-muted-foreground;
+  }
+  .t-caption {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-xs text-muted-foreground;
+  }
+  .t-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-[11px] font-medium uppercase tracking-[0.1em] text-muted-foreground;
+  }
+  .t-section-header {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground;
+  }
+  .t-mono {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    @apply text-sm font-normal;
+    letter-spacing: -0.01em;
+  }
+  .t-axis {
+    font-family: 'IBM Plex Sans', sans-serif;
+    @apply text-[10px] font-medium uppercase tracking-[0.08em];
+    color: hsl(var(--axis-label));
+  }
+  .t-change-positive {
+    @apply text-sm font-medium;
+    color: hsl(var(--kpi-strong));
+  }
+  .t-change-negative {
+    @apply text-sm font-medium;
+    color: hsl(var(--kpi-high-risk));
+  }
+
+  /* Emphasis typography - IBM Plex Serif for pull quotes, section openers */
+  .t-emphasis {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    @apply text-lg font-normal italic;
+    letter-spacing: 0;
+  }
+  .t-pullquote {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    @apply text-xl md:text-2xl font-normal;
+    letter-spacing: -0.01em;
+  }
+  .t-section-opener {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    @apply text-base font-medium;
+    letter-spacing: 0;
+  }
+}
+
+@layer components {
+  /* Card System - Liquid Glass with hover glow */
+  .glass-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.75rem;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 4px 16px rgba(0, 0, 0, 0.06),
+      0 12px 24px -4px hsl(var(--primary) / 0.12),
+      0 20px 40px -8px hsl(var(--primary) / 0.08);
+  }
+
+  .glass-card-elevated {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 1rem;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.05),
+      0 8px 32px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-elevated:hover {
+    border-color: hsl(var(--primary) / 0.35);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.05),
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      0 16px 32px -4px hsl(var(--primary) / 0.15),
+      0 24px 48px -8px hsl(var(--primary) / 0.1);
+  }
+
+  .dark .glass-card,
+  .dark .glass-card-elevated {
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.2),
+      0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark .glass-card:hover,
+  .dark .glass-card-elevated:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.2),
+      0 8px 32px rgba(0, 0, 0, 0.35),
+      0 16px 40px -4px hsl(var(--primary) / 0.2),
+      0 24px 56px -8px hsl(var(--primary) / 0.15);
+  }
+
+  .card-inner {
+    background: hsl(var(--card-inner));
+    border-radius: 0.5rem;
+  }
+
+  /* Card Title Badge */
+  .card-title-badge {
+    @apply inline-flex items-center px-2.5 py-1 text-xs font-semibold tracking-wide;
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.375rem;
+  }
+
+  .dark .card-title-badge {
+    background: hsl(var(--secondary));
+    border-color: hsl(var(--border));
+  }
+
+  /* KPI Status badges */
+  .score-badge { @apply inline-flex items-center justify-center rounded-md px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide; }
+  .score-badge-strong { background-color: hsl(var(--kpi-strong) / 0.15); color: hsl(var(--kpi-strong)); }
+  .score-badge-healthy { background-color: hsl(var(--kpi-healthy) / 0.15); color: hsl(var(--kpi-healthy)); }
+  .score-badge-watch { background-color: hsl(var(--kpi-watch) / 0.15); color: hsl(var(--kpi-watch)); }
+  .score-badge-at-risk { background-color: hsl(var(--kpi-at-risk) / 0.15); color: hsl(var(--kpi-at-risk)); }
+  .score-badge-high-risk { background-color: hsl(var(--kpi-high-risk) / 0.15); color: hsl(var(--kpi-high-risk)); }
+
+  /* Legacy mappings */
+  .score-badge-green { background-color: hsl(var(--score-green) / 0.15); color: hsl(var(--score-green)); }
+  .score-badge-yellow { background-color: hsl(var(--score-yellow) / 0.15); color: hsl(var(--score-yellow)); }
+  .score-badge-red { background-color: hsl(var(--score-red) / 0.15); color: hsl(var(--score-red)); }
+
+  .card-elevated {
+    @apply bg-card rounded-xl border border-border;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-elevated:hover {
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 4px 16px rgba(0, 0, 0, 0.06),
+      0 12px 24px -4px hsl(var(--primary) / 0.12),
+      0 20px 40px -8px hsl(var(--primary) / 0.08);
+  }
+
+  .dark .card-elevated {
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.2),
+      0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .dark .card-elevated:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.2),
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 16px 40px -4px hsl(var(--primary) / 0.2);
+  }
+
+  .card-interactive {
+    @apply bg-card rounded-xl border border-border transition-all duration-150;
+    @apply hover:border-primary/40 hover:shadow-md cursor-pointer;
+  }
+
+  .kpi-value {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    @apply text-2xl font-medium;
+    letter-spacing: -0.02em;
+  }
+
+  /* Chart styling */
+  .chart-line-primary {
+    stroke: hsl(var(--chart-highlight));
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .chart-line-secondary {
+    stroke: hsl(var(--chart-secondary));
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+  }
+  .chart-area-fill {
+    fill: hsl(var(--chart-highlight) / 0.1);
+  }
+  .chart-gridline {
+    stroke: hsl(var(--border));
+    stroke-width: 1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+    opacity: 0;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in-delayed-1 { animation-delay: 80ms; }
+  .animate-fade-in-delayed-2 { animation-delay: 160ms; }
+  .animate-fade-in-delayed-3 { animation-delay: 240ms; }
+
+  /* Ring draw animation */
+  .animate-ring-draw {
+    animation: ringDraw 1s ease-out forwards;
+  }
+  @keyframes ringDraw {
+    from { stroke-dashoffset: var(--ring-circumference, 628); }
+    to { stroke-dashoffset: var(--ring-offset, 0); }
+  }
+
+  /* Score count-up effect */
+  .animate-score-reveal {
+    animation: scoreReveal 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  @keyframes scoreReveal {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Chart animations */
+  .animate-draw-line {
+    animation: drawLine 1s ease-out forwards;
+  }
+  @keyframes drawLine {
+    from { stroke-dashoffset: 1000; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  .animate-fill-up {
+    animation: fillUp 0.6s ease-out forwards;
+  }
+  @keyframes fillUp {
+    from { transform: scaleY(0); transform-origin: bottom; }
+    to { transform: scaleY(1); transform-origin: bottom; }
+  }
+
+  /* Subtle glow pulse for status indicators */
+  .animate-glow-pulse {
+    animation: glowPulse 2.5s ease-in-out infinite;
+  }
+  @keyframes glowPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* Hide scrollbar utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

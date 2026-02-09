@@ -1,0 +1,86 @@
+/* CustomerHealthDetail and ProductHealthDetail page specific styles */
+.allMetricsSection {
+  margin-top: 24px;
+}
+
+.allMetricsTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+}
+
+.metricsDetailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.metricDetailCard {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.metricDetailCard.good {
+  border-bottom: 3px solid #22c55e;
+}
+
+.metricDetailCard.warning {
+  border-bottom: 3px solid #f59e0b;
+}
+
+.metricDetailCard.bad {
+  border-bottom: 3px solid #ef4444;
+}
+
+.metricDetailCard.neutral {
+  border-bottom: 3px solid #e5e7eb;
+}
+
+.metricDetailValue {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.metricDetailValue.good {
+  color: #22c55e;
+}
+
+.metricDetailValue.warning {
+  color: #f59e0b;
+}
+
+.metricDetailValue.bad {
+  color: #ef4444;
+}
+
+.metricDetailValue.neutral {
+  color: #1f2937;
+}
+
+.metricDetailLabel {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.metricDetailSource {
+  display: block;
+  font-size: 10px;
+  color: #3b82f6;
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .metricsDetailGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

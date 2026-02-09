@@ -1,0 +1,210 @@
+/* RevenueConcentration Component Styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.container:hover .chevron {
+  opacity: 1;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-foreground);
+}
+
+.chevron {
+  color: var(--color-primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Bars Container */
+.barsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clientName {
+  font-size: 11px;
+  color: var(--text-muted);
+  width: 110px;
+  flex-shrink: 0;
+}
+
+/* Track for the horizontal bar */
+.barTrack {
+  flex: 1;
+  height: 16px;
+  background-color: var(--bg-muted);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Fill bar that shows the percentage */
+.barFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* High concentration - red/orange (risk) */
+.barHigh {
+  background-color: hsl(var(--score-red));
+}
+
+/* Medium concentration - yellow/amber */
+.barMedium {
+  background-color: hsl(var(--score-yellow));
+}
+
+/* Low concentration - green (healthy) */
+.barLow {
+  background-color: hsl(var(--score-green));
+}
+
+/* Percentage label */
+.percentage {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-foreground);
+  width: 40px;
+  text-align: right;
+}
+
+/* Legacy bar styles (kept for backwards compatibility) */
+.barWrapper {
+  height: 20px;
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barCurrent {
+  height: 100%;
+  background-color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.barGrowth {
+  height: 100%;
+  background-color: var(--chart-1-color);
+}
+
+.barAtRisk {
+  height: 100%;
+  background-color: hsl(var(--score-red));
+  opacity: 0.8;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-default);
+  opacity: 0.7;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.legendDotHigh {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: hsl(var(--score-red));
+}
+
+.legendDotMedium {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: hsl(var(--score-yellow));
+}
+
+.legendDotLow {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: hsl(var(--score-green));
+}
+
+/* Legacy legend dots (kept for backwards compatibility) */
+.legendDotCurrent {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background-color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.legendDotGrowth {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background-color: var(--chart-1-color);
+}
+
+.legendDotAtRisk {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background-color: hsl(var(--score-red));
+  opacity: 0.8;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  min-height: 180px;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.emptySubtext {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}

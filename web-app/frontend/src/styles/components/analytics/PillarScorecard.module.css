@@ -1,0 +1,236 @@
+/* PillarScorecard Component Styles */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+  }
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: hsl(var(--primary) / 0.3); /* hover:border-primary/30 - matches reference UI */
+  box-shadow:
+    0 10px 15px -3px hsl(var(--primary) / 0.05),
+    0 4px 6px -4px hsl(var(--primary) / 0.05); /* hover:shadow-lg hover:shadow-primary/5 - matches reference UI */
+}
+
+.card:hover .chevron {
+  opacity: 1;
+}
+
+.card:hover .iconWrapper {
+  background-color: hsl(var(--primary) / 0.1); /* group-hover:bg-primary/10 - matches reference UI */
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: var(--bg-muted);
+  transition: background-color 0.2s ease;
+}
+
+.chevron {
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Pillar Name */
+.pillarName {
+  font-family: var(--font-sans);
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-foreground);
+  line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Score Row */
+.scoreRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.score {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Score colors — uses KPI banding colors matching reference */
+.scoreStrong {
+  color: hsl(var(--kpi-strong));
+}
+
+.scoreAtRisk {
+  color: hsl(var(--kpi-at-risk));
+}
+
+.scoreHighRisk {
+  color: hsl(var(--kpi-high-risk));
+}
+
+/* Trend Icons — uses KPI colors matching reference */
+.trendIcon {
+  display: flex;
+  align-items: center;
+}
+
+.trendUp {
+  color: hsl(var(--kpi-strong));
+}
+
+.trendDown {
+  color: hsl(var(--kpi-high-risk));
+}
+
+.trendFlat {
+  color: var(--text-muted);
+}
+
+/* Confidence Section */
+.confidenceSection {
+  margin-top: 8px;
+}
+
+.confidenceBar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--bg-muted);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.confidenceFill {
+  height: 100%;
+  background-color: var(--color-primary);
+  opacity: 0.6;
+  border-radius: 2px;
+}
+
+.confidenceText {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Pillar Color Classes */
+.colorFinancial {
+  color: #10b981;
+}
+
+.colorGtm {
+  color: #8b5cf6;
+}
+
+.colorCustomer {
+  color: #3b82f6;
+}
+
+.colorProduct {
+  color: #06b6d4;
+}
+
+.colorOperations {
+  color: #f59e0b;
+}
+
+.colorLeadership {
+  color: #f43f5e;
+}
+
+.colorEcosystem {
+  color: #6366f1;
+}
+
+.colorService {
+  color: #14b8a6;
+}
+
+/* Empty State - Full Component */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.emptySubtext {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Empty Card State */
+.cardEmpty {
+  opacity: 0.7;
+}
+
+.iconWrapperEmpty {
+  color: var(--text-muted);
+}
+
+.scoreEmpty {
+  color: var(--text-muted);
+}

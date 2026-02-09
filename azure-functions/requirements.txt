@@ -1,0 +1,16 @@
+azure-functions
+azure-storage-blob
+azure-storage-queue==12.15.0
+sqlmodel
+sqlalchemy
+psycopg2-binary
+pgvector
+openai
+httpx
+python-dotenv
+pdf2image
+python-pptx
+python-docx
+openpyxl
+Pillow
+tiktoken

@@ -1,0 +1,503 @@
+/* AnalyticsCardRegistry Component Styles */
+
+/* Grid Span Classes */
+.colSpan1 {
+  grid-column: span 1;
+}
+
+.colSpan2 {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .colSpan2 {
+    grid-column: span 2;
+  }
+}
+
+/* Height Classes */
+.heightSm {
+  height: 140px;
+}
+
+.heightMd {
+  height: 180px;
+}
+
+.heightLg {
+  height: 260px;
+}
+
+.heightXl {
+  height: 260px;
+}
+
+/* ===== KPI Card ===== */
+.kpiCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.kpiHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kpiTitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.kpiTrend {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.trendUp {
+  color: hsl(var(--kpi-strong));
+}
+
+.trendDown {
+  color: hsl(var(--kpi-high-risk));
+}
+
+.kpiValue {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+.kpiDescription {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.kpiPeriod {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ===== Gauge Card ===== */
+.gaugeCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gaugeHeader {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.gaugeWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gaugeRing {
+  position: relative;
+  width: 96px;
+  height: 96px;
+}
+
+.gaugeSvg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.gaugeTrack {
+  color: var(--bg-muted);
+}
+
+.gaugeProgress {
+  transition: stroke-dasharray 0.5s ease;
+}
+
+.gaugeCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gaugeValue {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+.gaugeLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* ===== Chart Card ===== */
+.chartCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chartHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.chartHeader {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.chartTotal {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-foreground);
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+
+.chartPeriodGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.chartPeriodLabel {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.chartPeriod {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  color: var(--text-muted);
+  padding: 2px 6px;
+  background-color: var(--bg-muted);
+  border-radius: 4px;
+}
+
+.chartContainer {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Tooltip */
+.chartTooltip {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.chartTooltipLabel {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0 0 2px 0;
+}
+
+.chartTooltipValue {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-foreground);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+/* Legacy sparkline bars (kept for fallback) */
+.chartBars {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.chartBar {
+  flex: 1;
+  min-height: 4px;
+  background-color: var(--color-primary);
+  border-radius: 2px 2px 0 0;
+  transition: height 0.3s ease;
+}
+
+.chartBar:hover {
+  opacity: 0.8;
+}
+
+/* ===== Comparison Card ===== */
+.comparisonCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.comparisonHeader {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.comparisonBars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comparisonItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.comparisonLabel {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.comparisonLabel span:last-child {
+  font-weight: 500;
+  color: var(--text-foreground);
+}
+
+.comparisonTrack {
+  height: 8px;
+  background-color: var(--bg-muted);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.comparisonFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* ===== Heatmap Card ===== */
+.heatmapCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.heatmapHeader {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.heatmapTableWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 0;
+}
+
+.heatmapColHeaders {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+}
+
+.heatmapColLabel {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding-bottom: 2px;
+}
+
+.heatmapDataRow {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+
+.heatmapRowLabel {
+  width: 62px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.heatmapDataCell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: default;
+  min-height: 28px;
+  /* Subtle border for definition */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.heatmapDataCell:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.heatmapCellValue {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-variant-numeric: tabular-nums;
+  /* Ensure text is always readable */
+  mix-blend-mode: normal;
+}
+
+/* ===== Table Card ===== */
+.tableCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tableHeader {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.tableList {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--bg-muted);
+  border: 1px solid var(--border-default);
+}
+
+.tableRowLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tableStatus {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statusGood {
+  background-color: hsl(var(--kpi-strong));
+}
+
+.statusWarning {
+  background-color: hsl(var(--kpi-at-risk));
+}
+
+.statusCritical {
+  background-color: hsl(var(--kpi-high-risk));
+}
+
+.tableName {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-foreground);
+}
+
+.tableValue {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== Empty States ===== */
+.cardEmptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
+
+.emptyValue {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.emptyLabel {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.chartEmptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  gap: 8px;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+  opacity: 0.5;
+}

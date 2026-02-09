@@ -1,0 +1,333 @@
+/* Analytics Page Styles */
+
+/*
+ * Layout matches reference pattern:
+ *   AppLayout .content provides base padding (24px)
+ *   .container is a wrapper inside that padding (min-h-screen bg-background)
+ *   .header has its own px-6 lg:px-8 py-5 padding with border-b
+ *   .sectionsWrapper has its own px-6 lg:px-8 py-8 padding
+ *   Inner content constrained via max-width within both areas
+ */
+
+.container {
+  min-height: 100vh;
+  background-color: var(--bg-background);
+}
+
+/* Header — matches reference px-6 lg:px-8 py-5 border-b border-border */
+.header {
+  padding: 20px 24px; /* py-5 px-6 */
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 20px 32px; /* lg:px-8 */
+  }
+}
+
+/* Header inner content — max-width constrained like reference max-w-7xl mx-auto */
+.headerContent {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header flex row — matches reference flex items-center justify-between */
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Sections wrapper — matches reference px-6 lg:px-8 py-8 */
+.sectionsWrapper {
+  padding: 32px 24px; /* py-8 px-6 */
+}
+
+@media (min-width: 1024px) {
+  .sectionsWrapper {
+    padding: 32px 32px; /* lg:px-8 */
+  }
+}
+
+/* Sections inner content — max-width constrained like reference max-w-7xl mx-auto space-y-8 */
+.sectionsContent {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Matches reference t-label class */
+.headerSubtitle {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 16px; /* t-label line-height */
+}
+
+/* Matches reference text-lg font-medium text-foreground mt-0.5 tracking-tight */
+.pageTitle {
+  font-family: var(--font-sans);
+  margin: 2px 0 0; /* mt-0.5 = 2px */
+  font-size: 18px; /* text-lg = 1.125rem = 18px */
+  line-height: 28px; /* text-lg line-height = 1.75rem = 28px */
+  font-weight: 500; /* font-medium */
+  color: var(--text-foreground);
+  letter-spacing: -0.025em; /* tracking-tight */
+}
+
+/* Reference has badges as direct children with gap-3 (12px) between all items.
+   We wrap badges, so we use same gap-3 (12px) internally to match visual spacing */
+.headerBadges {
+  display: none;
+  align-items: center;
+  gap: 12px; /* gap-3 - same as parent to match reference visual spacing */
+}
+
+@media (min-width: 768px) {
+  .headerBadges {
+    display: flex;
+  }
+}
+
+/* Matches reference px-3 py-1.5 bg-muted rounded-lg border border-border */
+.headerBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* gap-2 */
+  padding: 6px 12px; /* py-1.5 px-3 */
+  background-color: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px; /* rounded-lg */
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Matches reference h-4 w-4 text-muted-foreground */
+.headerBadge svg {
+  width: 16px; /* h-4 w-4 */
+  height: 16px;
+  color: var(--text-muted);
+}
+
+/* Matches reference flex items-center gap-3 */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* gap-3 */
+}
+
+.editButton {
+  gap: 8px; /* gap-2 */
+}
+
+/* Hide button text on small screens - matches reference hidden sm:inline */
+.editButtonText {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .editButtonText {
+    display: inline;
+  }
+}
+
+/* Edit Mode Banner */
+.editBanner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background-color: hsl(var(--primary) / 0.1);
+  border: 1px solid hsl(var(--primary) / 0.2);
+  border-radius: var(--radius-lg);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.editBannerIcon {
+  color: var(--color-primary);
+}
+
+.editBannerContent {
+  flex: 1;
+}
+
+.editBannerTitle {
+  font-family: var(--font-sans);
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-foreground);
+}
+
+.editBannerText {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Sections */
+.section {
+  margin-bottom: 32px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.sectionTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionIndicator {
+  width: 32px;
+  height: 4px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.sectionTitle {
+  font-family: var(--font-sans);
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.sectionStats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.statStrong {
+  color: var(--kpi-strong-color);
+  font-weight: 500;
+}
+
+.statModerate {
+  color: var(--kpi-at-risk-color);
+  font-weight: 500;
+}
+
+.statAtRisk {
+  color: var(--kpi-high-risk-color);
+  font-weight: 500;
+}
+
+.statSeparator {
+  color: var(--text-muted);
+}
+
+.sectionHint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Two Column Layout */
+.twoColumnSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .twoColumnSection {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.twoColumnItem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.trendAnalysisContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Cards Grid - Max 4 columns to match reference UI */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 48px;
+  background-color: hsl(var(--card));
+  border: 1px dashed hsl(var(--border));
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.emptyTitle {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}

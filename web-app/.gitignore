@@ -1,0 +1,104 @@
+# ----------------------------
+# Python / FastAPI backend
+# ----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+*.code-workspace
+
+# Byte-compiled / cache
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.tmp
+*.bak
+
+# Distribution / packaging
+build/
+dist/
+develop-eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+
+# Migrations (optional – keep if using Alembic)
+alembic/versions/*.pyc
+alembic.ini
+
+# ----------------------------
+# Environment and settings
+# ----------------------------
+.env
+.env.*
+!.env.example
+
+# Local config / secrets
+config/settings_local.py
+
+# ----------------------------
+# Frontend (Vite / React / etc.)
+# ----------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.vite/
+frontend/.cache/
+
+# ----------------------------
+# Logs / temp / data
+# ----------------------------
+*.log
+logs/
+tmp/
+temp/
+*.pid
+
+# ----------------------------
+# OS-specific
+# ----------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ----------------------------
+# Coverage / Testing
+# ----------------------------
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+.pytest_cache/
+.cache/
+
+# ----------------------------
+# Jupyter / Notebooks
+# ----------------------------
+.ipynb_checkpoints/
+*.ipynb
+
+# ----------------------------
+# Other IDE / Tooling
+# ----------------------------
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.idea/

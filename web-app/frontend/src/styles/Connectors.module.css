@@ -1,0 +1,771 @@
+.container {
+  width: 100%;
+}
+
+/* Connectors Grid */
+.connectorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* Connector Preview Card (for coming soon / not connected) */
+.connectorPreviewCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.connectorPreviewCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.connectorPreviewCardDisabled {
+  opacity: 0.85;
+}
+
+.connectorPreviewCardDisabled:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transform: none;
+}
+
+/* Coming Soon Badge */
+.comingSoonBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Connector Icon Variants */
+.connectorIconCarbonVoice {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.connectorIconXero {
+  background: linear-gradient(135deg, #13B5EA 0%, #0a8fc1 100%);
+}
+
+.connectorIconSalesforce {
+  background: linear-gradient(135deg, #00A1E0 0%, #0077b5 100%);
+}
+
+.connectorIconHubSpot {
+  background: linear-gradient(135deg, #FF7A59 0%, #e85a3a 100%);
+}
+
+.connectorIconDefault {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+}
+
+/* Preview Card Content */
+.previewCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.previewCardContent .connectorIcon {
+  width: 56px;
+  height: 56px;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.previewCardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.previewCardDescription {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+.previewCardFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.featureTag {
+  padding: 4px 10px;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-size: 12px;
+  border-radius: 12px;
+}
+
+.connectedBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.connectedBadge svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Expanded Card (when QuickBooks is active) */
+.expandedCard {
+  grid-column: 1 / -1;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+/* Messages */
+.errorMessage {
+  background-color: #fdecea;
+  color: #c62828;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.successMessage {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Card */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Company Select */
+.companySelect {
+  margin-top: 16px;
+}
+
+.select {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: white;
+  color: #000;
+  cursor: pointer;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+/* Connector Header */
+.connectorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.connectorInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.connectorIcon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #2ca01c 0%, #1a7a0f 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.connectorDescription {
+  color: #666;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Status Badges */
+.statusBadge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.statusConnected {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.statusDisconnected {
+  background-color: #f5f5f5;
+  color: #757575;
+}
+
+.statusExpired {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.statusError {
+  background-color: #fdecea;
+  color: #c62828;
+}
+
+/* Loading Section */
+.loadingSection {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Connection Info */
+.connectionInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.infoValue {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1976d2;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Entity Section */
+.entitySection {
+  margin-bottom: 24px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.entityHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.sectionDescription {
+  color: #666;
+  font-size: 14px;
+  margin: 8px 0 16px 0;
+}
+
+.entityActions {
+  display: flex;
+  gap: 12px;
+}
+
+.textButton {
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.textButton:hover {
+  text-decoration: underline;
+}
+
+.textButton:disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Entity Grid */
+.entityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.entityCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.entityCard:hover {
+  border-color: #1976d2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.entityDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.entityDisabled:hover {
+  border-color: #e0e0e0;
+  box-shadow: none;
+}
+
+.entityCheckbox {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.entityInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.entityName {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.entityDescription {
+  color: #666;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.entityCount {
+  color: #1976d2;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.entityError {
+  color: #c62828;
+  font-size: 11px;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.entityFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Sync Section */
+.syncSection {
+  margin-bottom: 24px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.syncActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.syncProgress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #e3f2fd;
+  border-radius: 6px;
+  color: #1565c0;
+}
+
+.syncHint {
+  color: #666;
+  font-size: 13px;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Ingestion Section */
+.ingestionSection {
+  margin-bottom: 24px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.ingestionActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.ingestionResult {
+  color: #2e7d32;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Ingestion Progress */
+.ingestionProgress {
+  margin-top: 12px;
+}
+
+.progressContainer {
+  margin-bottom: 12px;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #0078d4 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease-out;
+}
+
+.progressSteps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.progressStep {
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+.progressStepCompleted {
+  color: #22c55e;
+}
+
+.progressStepActive {
+  color: #3b82f6;
+  font-weight: 600;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.ingestionDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #e3f2fd;
+  border-radius: 6px;
+  color: #1565c0;
+  font-size: 14px;
+}
+
+.ingestionStep {
+  font-weight: 500;
+}
+
+.ingestionStats {
+  font-size: 13px;
+  color: #1976d2;
+}
+
+/* Sync History */
+.syncHistorySection {
+  margin-bottom: 24px;
+}
+
+.syncHistoryTable {
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.syncHistoryTable table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.syncHistoryTable th,
+.syncHistoryTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.syncHistoryTable th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.syncHistoryTable tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.syncStatusBadge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.syncStatusCompleted {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.syncStatusFailed {
+  background-color: #fdecea;
+  color: #c62828;
+}
+
+.syncStatusRunning {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.syncStatusPending {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.failedCount {
+  color: #c62828;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+/* Disconnect Section */
+.disconnectSection {
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Not Connected State */
+.notConnected {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.notConnectedText {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.primaryButton {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+.primaryButton:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  background-color: white;
+  color: #1976d2;
+  border: 1px solid #1976d2;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.secondaryButton:hover:not(:disabled) {
+  background-color: #e3f2fd;
+}
+
+.secondaryButton:disabled {
+  color: #bdbdbd;
+  border-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.dangerButton {
+  background-color: white;
+  color: #c62828;
+  border: 1px solid #c62828;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dangerButton:hover:not(:disabled) {
+  background-color: #fdecea;
+}
+
+.dangerButton:disabled {
+  color: #bdbdbd;
+  border-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .connectorHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .connectionInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .entityGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .syncActions {
+    flex-direction: column;
+  }
+
+  .syncActions button {
+    width: 100%;
+  }
+}

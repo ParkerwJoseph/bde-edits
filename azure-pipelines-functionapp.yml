@@ -1,0 +1,50 @@
+trigger:
+  branches:
+    include:
+      - development
+  paths:
+    include:
+      - azure-functions/**
+
+variables:
+  acrName: 'bdecontainerregistrydev'
+  azureSubscription: 'Azure Resource Manager Dev'
+  dockerRegistryServiceConnection: 'Docker Registry service connection Dev'
+  imageRepository: 'bde-functionapp-image-dev'
+  dockerfilePath: '$(Build.SourcesDirectory)/azure-functions/Dockerfile'
+  tag: '$(Build.BuildId)'
+  functionAppName: 'bde-function-app-dev'
+
+stages:
+  - stage: Build
+    displayName: Build and Push Image
+    jobs:
+      - job: Build
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: Docker@2
+            displayName: Build and Push Image
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository)
+              dockerfile: $(dockerfilePath)
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+                latest
+
+  - stage: Deploy
+    displayName: Deploy to Azure Function App
+    dependsOn: Build
+    jobs:
+      - job: Deploy
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: AzureFunctionAppContainer@1
+            displayName: Deploy Container to Azure Function
+            inputs:
+              azureSubscription: $(azureSubscription)
+              appName: $(functionAppName)
+              imageName: $(acrName).azurecr.io/$(imageRepository):$(tag)

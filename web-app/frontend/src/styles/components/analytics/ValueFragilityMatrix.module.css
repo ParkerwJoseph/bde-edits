@@ -1,0 +1,271 @@
+/* ValueFragilityMatrix Component Styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.infoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.infoButton:hover {
+  background-color: var(--bg-muted);
+  color: var(--text-primary);
+}
+
+/* Matrix Wrapper */
+.matrixWrapper {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  grid-template-rows: 1fr 24px;
+  gap: 8px;
+}
+
+/* Y-Axis Label */
+.yAxisLabel {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yAxisLabel span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* X-Axis Label */
+.xAxisLabel {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xAxisLabel span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Matrix Grid */
+.matrix {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  aspect-ratio: 1;
+  min-height: 200px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* Grid Background with Quadrants */
+.gridBackground {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.quadrant {
+  border: 0.5px dashed var(--border-default);
+}
+
+.quadrantTopLeft {
+  background-color: rgba(34, 197, 94, 0.05);
+}
+
+.quadrantTopRight {
+  background-color: rgba(234, 179, 8, 0.05);
+}
+
+.quadrantBottomLeft {
+  background-color: rgba(148, 163, 184, 0.05);
+}
+
+.quadrantBottomRight {
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+/* Quadrant Labels */
+.quadrantLabels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.quadrantLabel {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.labelTopLeft {
+  top: 8px;
+  left: 8px;
+}
+
+.labelTopRight {
+  top: 8px;
+  right: 8px;
+}
+
+.labelBottomLeft {
+  bottom: 8px;
+  left: 8px;
+}
+
+.labelBottomRight {
+  bottom: 8px;
+  right: 8px;
+}
+
+/* Signal Dots */
+.signal {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transform: translate(-50%, 50%);
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.signal:hover,
+.signalHovered {
+  width: 16px;
+  height: 16px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.signal:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Tooltip Content */
+.tooltipContent {
+  max-width: 200px;
+}
+
+.tooltipContent strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.tooltipContent p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.tooltipContent p:last-child {
+  margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-default);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 250px;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.emptySubtext {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}

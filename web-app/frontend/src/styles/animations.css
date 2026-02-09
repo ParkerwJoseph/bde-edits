@@ -1,0 +1,347 @@
+/* BDE UI V2 - Animation Classes (Aligned with Reference) */
+
+/* ===== Fade In ===== */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* Staggered fade in (for list items) - 80ms increments per reference */
+.animate-fade-in-delayed-1 { animation: fadeInUp 0.4s ease-out 80ms both; }
+.animate-fade-in-delayed-2 { animation: fadeInUp 0.4s ease-out 160ms both; }
+.animate-fade-in-delayed-3 { animation: fadeInUp 0.4s ease-out 240ms both; }
+.animate-fade-in-delayed-4 { animation: fadeInUp 0.4s ease-out 320ms both; }
+.animate-fade-in-delayed-5 { animation: fadeInUp 0.4s ease-out 400ms both; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Fade Out ===== */
+.animate-fade-out {
+  animation: fadeOut 0.2s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* ===== Scale In ===== */
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Slide In ===== */
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* ===== Ring Draw (for score gauges) ===== */
+.animate-ring-draw {
+  animation: ringDraw 1s ease-out forwards;
+}
+
+@keyframes ringDraw {
+  from {
+    stroke-dashoffset: var(--ring-circumference, 628);
+  }
+  to {
+    stroke-dashoffset: var(--ring-offset, 0);
+  }
+}
+
+/* ===== Pulse (for notifications, alerts) ===== */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ===== Spin (for loading indicators) ===== */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Bounce ===== */
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* ===== Ping (for notification dots) ===== */
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ===== Shimmer (for loading skeletons) ===== */
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-muted) 0%,
+    var(--bg-card) 50%,
+    var(--bg-muted) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===== Glow (for highlights) ===== */
+.animate-glow-green {
+  animation: glowGreen 2s ease-in-out infinite alternate;
+}
+
+.animate-glow-yellow {
+  animation: glowYellow 2s ease-in-out infinite alternate;
+}
+
+.animate-glow-red {
+  animation: glowRed 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowGreen {
+  from { box-shadow: 0 0 5px var(--score-green-bg); }
+  to { box-shadow: 0 0 15px var(--score-green-border); }
+}
+
+@keyframes glowYellow {
+  from { box-shadow: 0 0 5px var(--score-yellow-bg); }
+  to { box-shadow: 0 0 15px var(--score-yellow-border); }
+}
+
+@keyframes glowRed {
+  from { box-shadow: 0 0 5px var(--score-red-bg); }
+  to { box-shadow: 0 0 15px var(--score-red-border); }
+}
+
+/* ===== Number Count Up (for scores) ===== */
+.animate-count-up {
+  animation: countUp 0.6s ease-out;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Progress Bar Fill ===== */
+.animate-progress-fill {
+  animation: progressFill 0.5s ease-out forwards;
+}
+
+@keyframes progressFill {
+  from { width: 0; }
+  to { width: var(--progress-width, 100%); }
+}
+
+/* ===== Shake (for errors) ===== */
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* ===== Transition Utilities ===== */
+.transition-all {
+  transition: all 0.2s ease;
+}
+
+.transition-colors {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.transition-opacity {
+  transition: opacity 0.2s ease;
+}
+
+.transition-transform {
+  transition: transform 0.2s ease;
+}
+
+.transition-shadow {
+  transition: box-shadow 0.2s ease;
+}
+
+/* Slower transitions */
+.transition-slow {
+  transition-duration: 0.3s;
+}
+
+/* Faster transitions */
+.transition-fast {
+  transition-duration: 0.1s;
+}
+
+/* ===== Score Reveal (for score display) ===== */
+.animate-score-reveal {
+  animation: scoreReveal 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes scoreReveal {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Glow Pulse (for status indicators) ===== */
+.animate-glow-pulse {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ===== Fill Up (for bar charts) ===== */
+.animate-fill-up {
+  animation: fillUp 0.6s ease-out forwards;
+}
+
+@keyframes fillUp {
+  from { transform: scaleY(0); transform-origin: bottom; }
+  to { transform: scaleY(1); transform-origin: bottom; }
+}
+
+/* ===== Draw Line (for line charts) ===== */
+.animate-draw-line {
+  animation: drawLine 1s ease-out forwards;
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ===== Fill Bar (horizontal bar animation) ===== */
+.animate-fill-bar {
+  animation: fillBar 0.8s ease-out forwards;
+}
+
+@keyframes fillBar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ===== Hover Effects ===== */
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow:hover {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 8px 24px -4px hsl(var(--primary) / 0.1);
+}

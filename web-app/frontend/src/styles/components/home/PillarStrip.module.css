@@ -1,0 +1,188 @@
+/* PillarStrip Component Styles — Aligned with Reference */
+
+.wrapper {
+  overflow-x: auto;
+  margin: 0 -16px;
+  padding: 0 16px 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .wrapper {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+}
+
+.strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: max-content;
+  padding-right: 16px;
+}
+
+@media (min-width: 640px) {
+  .strip {
+    min-width: 0;
+    width: 100%;
+    padding-right: 0;
+    justify-content: space-between;
+  }
+}
+
+/* Pillar Button */
+.pillarButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* gap-2 - matches reference UI */
+  padding: 10px 12px; /* py-2.5 px-3 - matches reference UI */
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 60px;
+}
+
+@media (min-width: 640px) {
+  .pillarButton {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.pillarButton:hover {
+  transform: scale(1.02);
+}
+
+.pillarButton:active {
+  transform: scale(0.98);
+}
+
+/* Icon Wrapper */
+.iconWrapper {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+@media (min-width: 640px) {
+  .iconWrapper {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Icon (inside wrapper) */
+.icon {
+  width: 12px;
+  height: 12px;
+}
+
+@media (min-width: 640px) {
+  .icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Score */
+.score {
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 640px) {
+  .score {
+    font-size: 14px;
+  }
+}
+
+/* Health Status Variants — using KPI colors from reference */
+.statusGreen {
+  background-color: hsl(var(--kpi-strong) / 0.1);
+  border-color: hsl(var(--kpi-strong) / 0.3);
+  color: var(--kpi-strong-color);
+}
+
+.statusGreen:hover {
+  background-color: hsl(var(--kpi-strong) / 0.2);
+  border-color: hsl(var(--kpi-strong) / 0.5);
+}
+
+.statusYellow {
+  background-color: hsl(var(--kpi-watch) / 0.1);
+  border-color: hsl(var(--kpi-watch) / 0.3);
+  color: var(--kpi-watch-color);
+}
+
+.statusYellow:hover {
+  background-color: hsl(var(--kpi-watch) / 0.2);
+  border-color: hsl(var(--kpi-watch) / 0.5);
+}
+
+.statusRed {
+  background-color: hsl(var(--kpi-at-risk) / 0.1);
+  border-color: hsl(var(--kpi-at-risk) / 0.3);
+  color: var(--kpi-at-risk-color);
+}
+
+.statusRed:hover {
+  background-color: hsl(var(--kpi-at-risk) / 0.2);
+  border-color: hsl(var(--kpi-at-risk) / 0.5);
+}
+
+/* No Score / Empty State */
+.statusNone {
+  background-color: var(--bg-muted);
+  border-color: var(--border-default);
+  color: var(--text-muted);
+}
+
+.statusNone:hover {
+  background-color: var(--bg-accent);
+  border-color: var(--text-muted);
+}
+
+/* Tooltip */
+.tooltipContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tooltipName {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tooltipStatus {
+  font-size: 11px;
+}
+
+.tooltipGreen {
+  color: var(--kpi-strong-color);
+}
+
+.tooltipYellow {
+  color: var(--kpi-watch-color);
+}
+
+.tooltipRed {
+  color: var(--kpi-at-risk-color);
+}
+
+.tooltipNone {
+  color: var(--text-muted);
+}

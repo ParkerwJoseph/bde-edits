@@ -1,0 +1,109 @@
+/* QuickStatsDetail page specific styles */
+.metricsCategory {
+  margin-top: 24px;
+}
+
+.categoryTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 12px 0;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.metricCard {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.metricValue {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.metricLabel {
+  display: block;
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.metricConfidence {
+  display: block;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.metricSource {
+  display: block;
+  font-size: 9px;
+  color: #3b82f6;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.conflictsSection {
+  margin-top: 24px;
+  background: #fffbeb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.conflictsTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #92400e;
+  margin: 0 0 12px 0;
+}
+
+.conflictsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.conflictCard {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.conflictName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  flex: 1;
+}
+
+.conflictValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.conflictMeta {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,280 @@
+/* AnalysisProgressTracker Component Styles */
+
+.container {
+  padding: 24px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-foreground);
+}
+
+.runningBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-primary);
+  background-color: rgba(var(--primary-rgb, 59, 130, 246), 0.1);
+  border-radius: 16px;
+}
+
+.runningDot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Overall Progress */
+.progressSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progressHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progressLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-foreground);
+}
+
+.progressPercent {
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary);
+}
+
+.progressBarContainer {
+  height: 8px;
+  background-color: var(--bg-muted);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Stage Indicator */
+.stageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stageTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-foreground);
+}
+
+.stageList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stageItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background-color: var(--bg-muted);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.stageItemActive {
+  background-color: rgba(var(--primary-rgb, 59, 130, 246), 0.08);
+  border: 1px solid rgba(var(--primary-rgb, 59, 130, 246), 0.2);
+}
+
+.stageItemComplete {
+  background-color: rgba(34, 197, 94, 0.08);
+}
+
+.stageNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.stageItemActive .stageNumber {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.stageItemComplete .stageNumber {
+  background-color: hsl(var(--score-green));
+  color: white;
+}
+
+.stageLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.stageItemActive .stageLabel {
+  color: var(--text-foreground);
+  font-weight: 500;
+}
+
+.stageItemComplete .stageLabel {
+  color: var(--text-foreground);
+}
+
+/* Pillar Progress */
+.pillarSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pillarTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-foreground);
+}
+
+.pillarGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .pillarGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pillarItem {
+  padding: 12px;
+  background-color: var(--bg-muted);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.pillarItemProcessing {
+  border: 1px solid rgba(var(--primary-rgb, 59, 130, 246), 0.2);
+}
+
+.pillarItemComplete {
+  background-color: rgba(34, 197, 94, 0.05);
+}
+
+.pillarHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.pillarDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pillarName {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-foreground);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pillarProgressBar {
+  height: 4px;
+  background-color: var(--bg-card);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.pillarProgressFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.pillarScore {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-foreground);
+}
+
+/* Idle State */
+.idle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.idleIcon {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.idleText {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}

@@ -1,0 +1,638 @@
+/* AppSidebar Component Styles - Aligned with Reference */
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border-color);
+  z-index: 40;
+  transition: width 0.2s ease-linear;
+}
+
+.sidebarCollapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+/* Header */
+.header {
+  padding: 16px;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoImage {
+  height: 28px; /* h-7 w-7 = 1.75rem = 28px - matches reference UI */
+  width: 28px;
+  object-fit: contain;
+}
+
+.logoImageSmall {
+  height: 32px; /* h-8 w-8 = 2rem = 32px - matches reference UI (collapsed state) */
+  width: 32px;
+  object-fit: contain;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.logoText {
+  font-family: var(--font-sans);
+  font-size: 18px; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  color: var(--sidebar-fg);
+  letter-spacing: -0.025em; /* tracking-tight - matches reference UI */
+}
+
+.logoCollapsed {
+  display: flex;
+  justify-content: center;
+}
+
+/* Company Selector */
+.companySelector {
+  position: relative;
+}
+
+.companySelectorButton {
+  width: 100%;
+  min-height: 62px; /* Match reference UI height exactly */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px; /* px-3 py-2 */
+  background-color: transparent;
+  border: 1px solid hsl(var(--sidebar-border)); /* Use subtle sidebar border - matches reference UI */
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.companySelectorButton:hover {
+  background-color: var(--sidebar-accent-bg);
+}
+
+.companyInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.companyName {
+  display: block;
+  font-size: 14px; /* text-sm */
+  font-weight: 500; /* font-medium */
+  line-height: 1.5; /* Tailwind default line-height for text-sm */
+  color: var(--sidebar-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.companyType {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 10px; /* text-[10px] */
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* tracking-wide */
+  color: var(--sidebar-fg);
+  opacity: 0.6;
+}
+
+.companySelectorIcon {
+  color: var(--sidebar-fg);
+  opacity: 0.6;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.companySelectorIconOpen {
+  transform: rotate(180deg);
+}
+
+.companySelectorLoading {
+  color: var(--sidebar-fg);
+  opacity: 0.6;
+  flex-shrink: 0;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Company Dropdown */
+.companyDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  padding: 6px;
+  overflow: hidden;
+}
+
+.companyOption {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+  font-size: 14px;
+}
+
+.companyOption:hover {
+  background-color: var(--bg-muted);
+}
+
+.companyOptionActive {
+  background-color: var(--text-foreground);
+  color: var(--bg-background);
+}
+
+.companyOptionActive:hover {
+  background-color: var(--text-foreground);
+  color: var(--bg-background);
+}
+
+.companyOptionCheck {
+  flex-shrink: 0;
+}
+
+.companyOptionName {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+}
+
+.companyOptionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.companyOptionName {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.companyOptionType {
+  font-size: 11px;
+  opacity: 0.7;
+  display: block;
+}
+
+.companyOptionActive .companyOptionType {
+  opacity: 0.8;
+}
+
+/* Company Dropdown States */
+.companyDropdownLoading,
+.companyDropdownEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.companyDropdownList {
+  max-height: 240px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Thin scrollbar for dropdown */
+.companyDropdownList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.companyDropdownList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.companyDropdownList::-webkit-scrollbar-thumb {
+  background-color: var(--border-default);
+  border-radius: 3px;
+}
+
+.companyDropdownList::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+}
+
+/* Add Company Section */
+.addCompanySection {
+  border-top: 1px solid var(--border-default);
+  margin-top: 4px;
+  padding-top: 4px;
+}
+
+.addCompanyButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.15s ease;
+}
+
+.addCompanyButton:hover {
+  background-color: var(--bg-muted);
+}
+
+.addCompanyForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}
+
+.addCompanyInput {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-default);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.addCompanyInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.addCompanyInput::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.addCompanyInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.addCompanyActions {
+  display: flex;
+  gap: 4px;
+}
+
+.addCompanySubmit,
+.addCompanyCancel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.addCompanySubmit {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.addCompanySubmit:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.addCompanySubmit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.addCompanyCancel {
+  background-color: var(--bg-muted);
+  color: var(--text-primary);
+  opacity: 0.7;
+}
+
+.addCompanyCancel:hover:not(:disabled) {
+  background-color: var(--border-default);
+}
+
+.addCompanyCancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Navigation */
+.nav {
+  flex: 1;
+  padding: 16px 8px; /* py-4 px-2 - matches reference UI */
+  overflow-y: auto;
+}
+
+.navSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  padding: 8px; /* p-2 - matches reference UI SidebarGroup */
+}
+
+.navSectionTitle {
+  display: flex;
+  align-items: center;
+  height: 32px; /* h-8 - matches reference UI */
+  padding: 0 8px; /* px-2 */
+  margin-bottom: 8px; /* mb-2 */
+  font-family: var(--font-sans);
+  font-size: 10px; /* text-[10px] */
+  font-weight: 500; /* font-medium - matches reference UI */
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* tracking-[0.1em] */
+  color: var(--sidebar-fg);
+  opacity: 0.5; /* text-sidebar-foreground/50 */
+  border-radius: var(--radius-md); /* rounded-md */
+  flex-shrink: 0; /* shrink-0 */
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* gap-1 - matches reference UI SidebarMenu */
+  padding: 0; /* Remove padding, parent .nav now has px-2 */
+}
+
+/* Nav Link */
+.navLink {
+  display: flex;
+  align-items: center;
+  width: 100%; /* w-full - matches reference UI */
+  gap: 0.75rem; /* gap-3 = 12px */
+  padding: 0.625rem 1rem; /* py-2.5 px-4 = 10px 16px */
+  border-radius: 9999px; /* rounded-full / pill shape */
+  color: var(--text-secondary); /* text-muted-foreground */
+  text-decoration: none !important;
+  font-size: 0.875rem; /* text-sm = 14px */
+  line-height: 1.25rem; /* text-sm line-height = 20px - matches reference UI */
+  font-weight: 500; /* font-medium */
+  transition: all 0.2s ease; /* transition-all duration-200 */
+}
+
+.navLink:hover {
+  background-color: var(--bg-muted);
+  color: var(--sidebar-fg);
+  text-decoration: none !important;
+}
+
+.navLinkActive {
+  background-color: var(--text-foreground);
+  color: white;
+}
+
+.navLinkActive:hover {
+  background-color: var(--text-foreground);
+  color: white;
+  text-decoration: none !important;
+}
+
+/* Collapsed nav link - square with rounded corners and border */
+.navLinkCollapsed {
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  padding: 0;
+  gap: 0;
+  border-radius: 12px; /* rounded-xl */
+  border: 1px solid var(--border-default);
+  background-color: transparent;
+  color: var(--text-secondary);
+}
+
+.navLinkCollapsed:hover {
+  background-color: var(--bg-muted);
+  border-color: var(--border-default);
+  color: var(--sidebar-fg);
+}
+
+/* Collapsed + Active state */
+.navLinkCollapsedActive {
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  padding: 0;
+  gap: 0;
+  border-radius: 12px;
+  background-color: var(--text-foreground);
+  color: white;
+  border: 1px solid var(--text-foreground);
+}
+
+.navLinkCollapsedActive:hover {
+  background-color: var(--text-foreground);
+  color: white;
+  border-color: var(--text-foreground);
+}
+
+.navIcon {
+  flex-shrink: 0;
+  width: 1rem; /* w-4 = 16px - matches reference UI */
+  height: 1rem; /* h-4 = 16px - matches reference UI */
+}
+
+.navLabel {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem; /* text-sm = 14px */
+  line-height: 1.25rem; /* text-sm line-height = 20px */
+  font-weight: 500; /* font-medium */
+}
+
+/* Footer */
+.footer {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* User Section */
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userSectionCollapsed {
+  justify-content: center;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sidebar-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userRole {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--sidebar-fg);
+  opacity: 0.6;
+}
+
+/* Footer Actions */
+.footerActions {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoutButton {
+  width: 100%;
+  justify-content: flex-start;
+  color: var(--sidebar-fg);
+  opacity: 0.7;
+}
+
+.logoutButton:hover {
+  color: var(--sidebar-fg);
+  opacity: 1;
+}
+
+/* Collapse Toggle */
+.collapseToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--bg-muted);
+  border: 1px solid var(--sidebar-border-color);
+  border-radius: var(--radius-lg);
+  color: var(--sidebar-fg);
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.collapseToggle:hover {
+  background-color: var(--sidebar-accent-bg);
+  color: var(--sidebar-fg);
+  opacity: 1;
+  border-color: var(--color-primary);
+}
+
+.collapseToggleLabel {
+  white-space: nowrap;
+}
+
+/* Collapsed state adjustments */
+.sidebarCollapsed .header {
+  padding: 16px 8px; /* px-2 py-4 - matches reference UI */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebarCollapsed .nav {
+  padding: 16px 12px; /* py-4 px-3 - matches reference UI for collapsed state */
+}
+
+.sidebarCollapsed .navList {
+  padding: 0; /* Parent .nav has px-3 in collapsed state */
+  align-items: center;
+  gap: 12px; /* gap-3 - matches reference UI */
+}
+
+.sidebarCollapsed .navSection {
+  margin-bottom: 16px;
+}
+
+.sidebarCollapsed .footer {
+  padding: 16px 8px;
+}
+
+.sidebarCollapsed .footerActions {
+  align-items: center;
+}
+
+.sidebarCollapsed .logoutButton {
+  width: auto;
+  padding: 8px;
+}

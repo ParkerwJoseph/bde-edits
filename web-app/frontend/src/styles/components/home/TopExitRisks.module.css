@@ -1,0 +1,223 @@
+/* TopExitRisks Component Styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header */
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-family: var(--font-sans);
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.infoButton {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: 1px solid hsl(var(--border));
+  border-radius: 50%;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.infoButton:hover {
+  background-color: var(--bg-accent);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Risk List */
+.riskList {
+  display: flex;
+  flex-direction: column;
+}
+
+.riskList > .riskItem + .riskItem {
+  border-top: 1px solid hsl(var(--border) / 0.4);
+}
+
+/* Risk Item */
+.riskItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 12px;
+  margin: 0 -12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+  border-radius: var(--radius-md);
+}
+
+.riskItem:first-child {
+  padding-top: 0;
+}
+
+.riskItem:last-child {
+  padding-bottom: 0;
+}
+
+.riskItem:hover {
+  background-color: hsl(var(--muted) / 0.1);
+}
+
+/* Risk Left */
+.riskLeft {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.accentBar {
+  width: 2px;
+  border-radius: 9999px;
+  align-self: stretch;
+}
+
+.riskContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.riskTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.riskValue {
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Risk Right */
+.riskRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.deltaBadge {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.deltaPositive {
+  color: var(--kpi-strong-color);
+  border-color: hsl(var(--kpi-strong) / 0.3);
+  background-color: hsl(var(--kpi-strong) / 0.05);
+}
+
+.deltaNegative {
+  color: var(--kpi-high-risk-color);
+  border-color: hsl(var(--kpi-high-risk) / 0.3);
+  background-color: hsl(var(--kpi-high-risk) / 0.05);
+}
+
+.deltaNeutral {
+  color: var(--text-muted);
+  border-color: hsl(var(--border));
+  background-color: hsl(var(--muted) / 0.3);
+}
+
+.arrowIcon {
+  color: hsl(var(--muted-foreground) / 0.4);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.riskItem:hover .arrowIcon {
+  opacity: 1;
+}
+
+/* View All Button */
+.viewAllButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.viewAllButton:hover {
+  text-decoration: underline;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.emptySubtext {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

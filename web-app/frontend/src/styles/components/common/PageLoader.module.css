@@ -1,0 +1,46 @@
+/* PageLoader Component Styles */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullPage {
+  min-height: 400px;
+  width: 100%;
+  padding: 48px;
+}
+
+.inline {
+  padding: 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.spinner {
+  color: var(--color-primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}

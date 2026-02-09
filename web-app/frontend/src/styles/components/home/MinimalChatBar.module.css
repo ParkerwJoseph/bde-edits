@@ -1,0 +1,123 @@
+/* MinimalChatBar Component Styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Quick Prompts */
+.quickPromptsWrapper {
+  overflow-x: auto;
+  margin: 0 -16px;
+  padding: 0 16px 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.quickPromptsWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .quickPromptsWrapper {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+}
+
+.quickPrompts {
+  display: flex;
+  gap: 8px;
+  min-width: max-content;
+}
+
+@media (min-width: 640px) {
+  .quickPrompts {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+}
+
+.quickPromptButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--bg-muted);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.quickPromptButton:hover {
+  background-color: var(--bg-accent);
+  color: var(--text-primary);
+  border-color: rgba(var(--primary-rgb, 59, 130, 246), 0.3);
+}
+
+/* Form */
+.form {
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  transition: all 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+  border-color: rgba(var(--primary-rgb, 59, 130, 246), 0.4);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb, 59, 130, 246), 0.1);
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--bg-background);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.submitButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

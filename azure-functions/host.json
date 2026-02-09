@@ -1,0 +1,34 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    },
+    "logLevel": {
+      "default": "Information",
+      "Host.Results": "Information",
+      "Function": "Information",
+      "Host.Aggregator": "Information"
+    }
+  },
+  "extensions": {
+    "blobs": {
+      "maxDegreeOfParallelism": 4,
+      "poisonBlobThreshold": 3
+    },
+    "queues": {
+      "maxDequeueCount": 5,
+      "visibilityTimeout": "00:30:00",
+      "batchSize": 4,
+      "maxPollingInterval": "00:00:02"
+    }
+  },
+  "functionTimeout": "04:00:00",
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[4.*, 5.0.0)"
+  }
+}

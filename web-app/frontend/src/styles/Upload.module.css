@@ -1,0 +1,473 @@
+.container {
+  max-width: 1600px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.dropzone {
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #fafafa;
+}
+
+.dropzone:hover {
+  border-color: #0078d4;
+  background-color: #f0f7ff;
+}
+
+.dropzoneActive {
+  border-color: #0078d4;
+  background-color: #e3f2fd;
+}
+
+.dropzoneIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.dropzoneTitle {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.dropzoneText {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.browseButton {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.browseButton:hover {
+  background-color: #106ebe;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileList {
+  margin-top: 24px;
+}
+
+.fileListTitle {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.fileIcon {
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.fileInfo {
+  flex: 1;
+}
+
+.fileName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 2px 0;
+}
+
+.fileSize {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.removeButton {
+  padding: 6px 12px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.removeButton:hover {
+  background-color: #fee;
+  border-color: #fcc;
+  color: #c00;
+}
+
+.uploadButton {
+  width: 100%;
+  padding: 12px 24px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 16px;
+}
+
+.uploadButton:hover {
+  background-color: #106ebe;
+}
+
+.uploadButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 24px;
+  color: #666;
+}
+
+/* Company Selector */
+.companySelectorWrapper {
+  margin-bottom: 16px;
+}
+
+.companySelectorLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.loadingText {
+  color: #666;
+}
+
+.warningBox {
+  padding: 16px;
+  background-color: #fff3cd;
+  border-radius: 6px;
+  color: #856404;
+}
+
+.warningLink {
+  color: #0078d4;
+}
+
+.companySelect {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  background-color: white;
+}
+
+/* Status Badges */
+.statusBadge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.statusPending {
+  background-color: rgba(107, 114, 128, 0.125);
+  color: #6b7280;
+}
+
+.statusUploading {
+  background-color: rgba(59, 130, 246, 0.125);
+  color: #3b82f6;
+}
+
+.statusProcessing {
+  background-color: rgba(245, 158, 11, 0.125);
+  color: #f59e0b;
+}
+
+.statusCompleted {
+  background-color: rgba(34, 197, 94, 0.125);
+  color: #22c55e;
+}
+
+.statusFailed {
+  background-color: rgba(239, 68, 68, 0.125);
+  color: #ef4444;
+}
+
+/* Processing indicator */
+.processingIndicator {
+  font-weight: normal;
+  margin-left: 8px;
+  color: #f59e0b;
+}
+
+/* Error text */
+.errorText {
+  color: #ef4444;
+  margin-left: 8px;
+}
+
+/* Small format text */
+.formatHint {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Small button variant */
+.smallButton {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.smallButtonWithMargin {
+  padding: 6px 12px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+/* View link styled as button */
+.viewLink {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  text-decoration: none;
+  background-color: #0078d4;
+  color: white;
+  border-radius: 4px;
+}
+
+.viewLink:hover {
+  background-color: #106ebe;
+}
+
+/* Pagination */
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.paginationInfo {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.paginationButtons {
+  display: flex;
+  gap: 8px;
+}
+
+/* Excluded status */
+.statusExcluded {
+  background-color: rgba(156, 163, 175, 0.125);
+  color: #9ca3af;
+}
+
+.fileItemExcluded {
+  opacity: 0.6;
+  background-color: #f0f0f0;
+}
+
+.excludeText {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* File path display */
+.filePath {
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* File list header with actions */
+.fileListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fileListActions {
+  display: flex;
+  gap: 16px;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  color: #0078d4;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.linkButton:hover {
+  color: #106ebe;
+}
+
+/* Browse buttons container */
+.browseButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Clickable filename */
+.fileNameClickable {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0078d4;
+  margin: 0 0 2px 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.fileNameClickable:hover {
+  color: #106ebe;
+  text-decoration: underline;
+}
+
+/* Delete button */
+.deleteButton {
+  padding: 6px 10px;
+  background-color: transparent;
+  border: 1px solid #fca5a5;
+  border-radius: 4px;
+  color: #dc2626;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: 8px;
+}
+
+.deleteButton:hover {
+  background-color: #fee2e2;
+  border-color: #f87171;
+}
+
+.deleteButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Actions container in Recent Documents */
+.documentActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Progress bar styles */
+.progressContainer {
+  margin-top: 8px;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #0078d4 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease-out;
+}
+
+/* Current step display with percentage */
+.progressCurrentStep {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  background-color: #f0f7ff;
+  border-radius: 4px;
+  border-left: 3px solid #0078d4;
+}
+
+.progressStepName {
+  font-size: 13px;
+  font-weight: 500;
+  color: #0078d4;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.progressPercent {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0078d4;
+}
+
+.progressSteps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+}
+
+.progressStep {
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+.progressStepCompleted {
+  color: #22c55e;
+}
+
+.progressStepActive {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

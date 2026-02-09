@@ -1,0 +1,138 @@
+/* ScoreGauge component styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.clickable:hover {
+  transform: scale(1.02);
+}
+
+.gaugeWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.gauge {
+  display: block;
+}
+
+.backgroundArc {
+  stroke: #e5e7eb;
+}
+
+.progressArc {
+  transition: stroke-dasharray 0.8s ease-in-out;
+}
+
+.scoreDisplay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.scoreValue {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.scoreMax {
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.placeholder {
+  font-weight: 600;
+  color: #d1d5db;
+}
+
+/* Size variants */
+.large .gauge {
+  width: 184px;
+  height: 102px;
+}
+
+.large .scoreValue {
+  font-size: 48px;
+}
+
+.large .scoreMax {
+  font-size: 18px;
+}
+
+.large .placeholder {
+  font-size: 36px;
+}
+
+.medium .gauge {
+  width: 140px;
+  height: 80px;
+}
+
+.medium .scoreValue {
+  font-size: 36px;
+}
+
+.medium .scoreMax {
+  font-size: 14px;
+}
+
+.medium .placeholder {
+  font-size: 28px;
+}
+
+.small .gauge {
+  width: 96px;
+  height: 58px;
+}
+
+.small .scoreValue {
+  font-size: 24px;
+}
+
+.small .scoreMax {
+  font-size: 12px;
+}
+
+.small .placeholder {
+  font-size: 20px;
+}
+
+.labelContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.ratingBadge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #9ca3af;
+}

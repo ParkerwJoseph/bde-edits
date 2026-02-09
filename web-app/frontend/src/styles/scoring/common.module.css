@@ -1,0 +1,329 @@
+/* Common styles shared across scoring detail pages */
+.container {
+  padding: 24px 0;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.backButton:hover {
+  color: #0078d4;
+}
+
+.headerSection {
+  margin-bottom: 32px;
+}
+
+.categoryBadge {
+  display: inline-block;
+  background: #1f2937;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.sourceCount {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 16px 0;
+}
+
+.documentsContainer {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #f3f4f6;
+}
+
+.documentsContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.documentsContainer::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.documentsContainer::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.documentsContainer::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.loadingState,
+.errorState,
+.emptyState {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 48px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.errorState {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.sourceCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.sourceHeader {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.sourceIcon {
+  width: 40px;
+  height: 40px;
+  background: #fef3c7;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.sourceInfo {
+  flex: 1;
+}
+
+.sourceTitle {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2px;
+}
+
+.sourceDate {
+  display: block;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.confidenceBadge {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.confidenceValue {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.extractedValues {
+  padding: 16px 20px;
+}
+
+.valuesLabel {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.valueCard {
+  background: #f9fafb;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #e5e7eb;
+}
+
+.valueLabel {
+  display: block;
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.pageRef {
+  color: #0078d4;
+  margin-left: 4px;
+}
+
+.valueNumber {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.lineageSection {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.lineageTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+}
+
+.lineageFlow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lineageNode {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.lineageNodeMeta {
+  font-size: 9px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.lineageNodeFinal {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.lineageArrow {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.confidenceSection {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.confidenceTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+}
+
+.confidenceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.confidenceItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confidenceNumber {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.confidenceLabel {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .titleRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .confidenceGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

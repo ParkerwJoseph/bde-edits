@@ -1,0 +1,284 @@
+/* DocumentDetail Page Styles */
+/* Based on reference UI design */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Document Info Card */
+.infoCard {
+  padding: 20px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+}
+
+.infoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.infoMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-foreground);
+  background-color: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.backButton:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--color-primary);
+}
+
+/* Pillar Summary */
+.pillarSection {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-default);
+}
+
+.pillarTitle {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-foreground);
+}
+
+.pillarFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pillarButton {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 16px;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pillarButtonActive {
+  border-width: 2px;
+  font-weight: 600;
+}
+
+.showAllButton {
+  padding: 6px 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  background-color: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.showAllButton:hover {
+  background-color: var(--bg-hover);
+}
+
+/* Chunks Card */
+.chunksCard {
+  padding: 20px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+}
+
+.chunksHeader {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-foreground);
+}
+
+.chunksList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chunkItem {
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.chunkItem:hover {
+  border-color: rgba(var(--primary-rgb, 59, 130, 246), 0.3);
+}
+
+.chunkHeader {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--bg-muted);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.chunkHeader:hover {
+  background-color: var(--bg-hover);
+}
+
+.chunkIcon {
+  font-size: 20px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.chunkInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.chunkMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pillarBadge {
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.chunkPage {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.chunkConfidence {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.chunkSummary {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--text-foreground);
+  line-height: 1.4;
+}
+
+.expandIcon {
+  font-size: 14px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* Chunk Content */
+.chunkContent {
+  padding: 16px;
+  border-top: 1px solid var(--border-default);
+}
+
+.previousContext {
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+  background-color: rgba(var(--primary-rgb, 59, 130, 246), 0.05);
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+.previousContextLabel {
+  font-weight: 600;
+  color: var(--text-foreground);
+}
+
+.contentText {
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-foreground);
+}
+
+.metadataSection {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: var(--bg-muted);
+  border-radius: 6px;
+}
+
+.metadataLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-foreground);
+  margin-bottom: 8px;
+}
+
+.metadataContent {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  overflow: auto;
+  font-family: monospace;
+}
+
+/* Empty & Loading States */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.loadingState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+}

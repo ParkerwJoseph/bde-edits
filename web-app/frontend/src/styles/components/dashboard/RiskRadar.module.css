@@ -1,0 +1,126 @@
+/* RiskRadar component styles */
+.container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.redBadge {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.yellowBadge {
+  background: #fffbeb;
+  color: #f59e0b;
+}
+
+.greenBadge {
+  background: #f0fdf4;
+  color: #22c55e;
+}
+
+.flagsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.flagItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.flagItem.placeholder {
+  opacity: 0.6;
+}
+
+.redFlag {
+  background: #fef2f2;
+  border-left: 3px solid #ef4444;
+}
+
+.yellowFlag {
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+}
+
+.greenFlag {
+  background: #f0fdf4;
+  border-left: 3px solid #22c55e;
+}
+
+.flagDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.redDot {
+  background: #ef4444;
+}
+
+.yellowDot {
+  background: #f59e0b;
+}
+
+.greenDot {
+  background: #22c55e;
+}
+
+.flagText {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.viewMore {
+  font-size: 12px;
+  color: #0078d4;
+  font-weight: 500;
+}

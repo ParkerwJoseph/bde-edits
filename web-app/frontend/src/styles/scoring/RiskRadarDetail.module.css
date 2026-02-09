@@ -1,0 +1,87 @@
+/* RiskRadarDetail page specific styles */
+.flagsSection {
+  margin-top: 24px;
+}
+
+.flagsSectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.flagsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.flagCard {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.flagCard.redFlag {
+  border-left: 4px solid #ef4444;
+}
+
+.flagCard.yellowFlag {
+  border-left: 4px solid #f59e0b;
+}
+
+.flagCard.greenFlag {
+  border-left: 4px solid #22c55e;
+}
+
+.flagHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.flagText {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+  flex: 1;
+}
+
+.flagSeverity {
+  font-size: 11px;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.flagMeta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.flagCategory,
+.flagPillar {
+  font-size: 11px;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.flagSource {
+  font-size: 11px;
+  color: #3b82f6;
+  background: #eff6ff;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.flagRationale {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}

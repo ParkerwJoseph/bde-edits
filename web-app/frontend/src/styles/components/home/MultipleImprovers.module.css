@@ -1,0 +1,317 @@
+/* MultipleImprovers Component Styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-family: var(--font-sans);
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.infoButton {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: hsl(var(--muted) / 0.5);
+  border: none;
+  border-radius: 50%;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.infoButton:hover {
+  background-color: var(--bg-accent);
+}
+
+.viewAllLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.viewAllLink:hover {
+  text-decoration: underline;
+}
+
+/* List dividers */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list > .item + .item {
+  border-top: 1px solid hsl(var(--border) / 0.6);
+}
+
+/* Item */
+.item {
+  padding: 16px 8px;
+  margin: 0 -8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+  border-radius: var(--radius-md);
+}
+
+.item:first-child {
+  padding-top: 0;
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+.item:hover {
+  background-color: hsl(var(--muted) / 0.1);
+}
+
+.itemContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Priority Column */
+.priorityColumn {
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.priorityBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--text-primary);
+  color: var(--bg-background);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Action Row */
+.actionRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.actionText {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.impactBadge {
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: hsl(var(--primary) / 0.1);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* Meta Row */
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.metaDivider {
+  color: hsl(var(--border));
+}
+
+.metaLabel {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Status */
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.statusText {
+  font-weight: 500;
+}
+
+.statusCritical {
+  color: var(--kpi-high-risk-color);
+}
+
+.statusWarning {
+  color: var(--kpi-watch-color);
+}
+
+.statusGood {
+  color: var(--kpi-strong-color);
+}
+
+/* Level Badges */
+.levelBadge {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.levelEmpty {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+/* Impact variants */
+.levelImpactHigh {
+  color: var(--kpi-strong-color);
+}
+
+.levelImpactMed {
+  color: var(--text-muted);
+}
+
+.levelImpactLow {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* Effort variants (inverse - high effort is bad) */
+.levelEffortHigh {
+  color: var(--kpi-at-risk-color);
+}
+
+.levelEffortMed {
+  color: var(--text-muted);
+}
+
+.levelEffortLow {
+  color: var(--kpi-strong-color);
+}
+
+/* Progress */
+.progressText {
+  font-family: monospace;
+  color: var(--text-muted);
+}
+
+.progressBar {
+  width: 40px;
+  height: 4px;
+  background-color: hsl(var(--border));
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* Chevron */
+.chevron {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--text-muted);
+  opacity: 0.4;
+  transition: all 0.15s ease;
+}
+
+.item:hover .chevron {
+  opacity: 1;
+  color: var(--color-primary);
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.emptySubtext {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
